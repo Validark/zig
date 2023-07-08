@@ -1481,15 +1481,15 @@ test "mulWide" {
 }
 
 /// See also `CompareOperator`.
-pub const Order = enum {
+pub const Order = enum(u2) {
     /// Less than (`<`)
-    lt,
+    lt = 1,
 
     /// Equal (`==`)
-    eq,
+    eq = 2,
 
     /// Greater than (`>`)
-    gt,
+    gt = 0,
 
     pub fn invert(self: Order) Order {
         return switch (self) {
